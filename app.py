@@ -9,7 +9,7 @@ from langchain.chains.conversation.memory import ConversationBufferMemory
 # =============================================================================
 # Make sure you have your API key in an environment variable OR st.secrets
 # e.g., export OPENAI_API_KEY="sk-XXXX"
-api_key = "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"
+api_key = "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"
 if not api_key:
     st.warning("OpenAI API key not found. Add OPENAI_API_KEY as env variable or in Streamlit secrets.")
 else:
