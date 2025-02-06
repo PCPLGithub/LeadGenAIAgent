@@ -9,7 +9,7 @@ from langchain.chains.conversation.memory import ConversationBufferMemory
 # =============================================================================
 # Make sure you have your API key in an environment variable OR st.secrets
 # e.g., export OPENAI_API_KEY="sk-XXXX"
-api_key = os.environ.get("OPENAI_API_KEY")
+api_key = st.secrets.get("OPENAI_API_KEY")
 
 if not api_key:
     st.warning("OpenAI API key not found. Please set 'OPENAI_API_KEY' as an environment variable in Netlify or in Streamlit secrets.")
