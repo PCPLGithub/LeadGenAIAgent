@@ -9,12 +9,12 @@ from langchain.chains.conversation.memory import ConversationBufferMemory
 # =============================================================================
 # Make sure you have your API key in an environment variable OR st.secrets
 # e.g., export OPENAI_API_KEY="sk-XXXX"
-api_key = "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"
-if not api_key:
-    st.warning("OpenAI API key not found. Add OPENAI_API_KEY as env variable or in Streamlit secrets.")
-else:
-    # The LLM we will use. By default, it might use GPT-3.5; set model_name="gpt-4" if you have access
+api_key = os.environ.get("OPENAI_API_KEY")
 
+if not api_key:
+    st.warning("OpenAI API key not found. Please set 'OPENAI_API_KEY' as an environment variable in Netlify or in Streamlit secrets.")
+else:
+    # The LLM we will use. By default, it might use GPT-3.5; set model_name="gpt-4" if you have access.
     llm = ChatOpenAI(
         openai_api_key=api_key,
         model_name="gpt-4",
